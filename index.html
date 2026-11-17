@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa de Projetos MDA em Sergipe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <button class="mobile-toggle" id="toggleAside">Buscar</button>
+    <div>
+      <h1>Projetos do MDA em Sergipe</h1>
+      <div class="sub">Superintendência Federal de Desenvolvimento Agrário de Sergipe (SFDA-SE)</div>
+    </div>
+  </div>
+  <div class="stats">
+    <div><b id="statMunis">–</b> municípios com projetos</div>
+    <div><b id="statProjs">–</b> projetos mapeados</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside id="aside">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar município...">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </aside>
+
+  <div id="map">
+    <div class="legend-box">
+      <div class="legend-title">Legenda</div>
+      <div class="row"><span class="sw" style="background:#D9A441;"></span> Município com projeto(s) MDA</div>
+      <div class="row"><span class="sw" style="background:#DCE3D5;"></span> Sem projeto identificado na planilha</div>
+      <div class="row"><span class="sw" style="background:#1F3A2E; border-radius:50%;"></span> Clique para ver detalhes</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="dialog">
+    <div class="dialog-head">
+      <button class="close-btn" id="closeDialog">✕</button>
+      <h2 id="dialogTitle">Município</h2>
+      <div class="meta" id="dialogMeta"></div>
+    </div>
+    <div class="dialog-body" id="dialogBody"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="data/municipios-geojson.js"></script>
+<script src="data/projetos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
